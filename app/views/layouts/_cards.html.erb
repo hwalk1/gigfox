@@ -7,7 +7,7 @@
 
       <% @venues.each do |venue| %>
         <div class="card">
-          <img class="card-img-top" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi1.ytimg.com%2Fvi%2F1umKGrEW_U8%2Fmaxresdefault.jpg&f=1&nofb=1" alt="Card image">
+          <img class="card-img-top" src="<%= venue.picture_url %>" alt="Card image">
           <div class="card-body">
             <h5 class="card-title"><%= venue.name %></h5>
             <p class="card-details"><%= venue.description %></p>
