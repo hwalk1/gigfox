@@ -4,90 +4,20 @@
 <div class="container">
   <div class="row">
     <div class="home-container">
-      <div class="card" style="">
-        <img class="card-img-top" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi1.ytimg.com%2Fvi%2F1umKGrEW_U8%2Fmaxresdefault.jpg&f=1&nofb=1" alt="Card image">
-        <div class="card-body">
-          <h5 class="card-title">Rainbow Road</h5>
-          <p class="card-details">details for card go here...</p>
-          <p class="card-price">price</p>
-          <a href="#" class="btn btn-primary">Book Now</a>
-        </div>
-      </div>
 
-      <div class="card" style="">
-        <img class="card-img-top" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi1.ytimg.com%2Fvi%2F1umKGrEW_U8%2Fmaxresdefault.jpg&f=1&nofb=1" alt="Card image">
-        <div class="card-body">
-          <h5 class="card-title">Rainbow Road</h5>
-          <p class="card-details">details for card go here...</p>
-          <p class="card-price">price</p>
-          <a href="#" class="btn btn-primary">Book Now</a>
-        </div>
-      </div>
-
-      <div class="card" style="">
-        <img class="card-img-top" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi1.ytimg.com%2Fvi%2F1umKGrEW_U8%2Fmaxresdefault.jpg&f=1&nofb=1" alt="Card image">
-        <div class="card-body">
-          <h5 class="card-title">Rainbow Road</h5>
-          <p class="card-details">details for card go here...</p>
-          <p class="card-price">price</p>
-          <a href="#" class="btn btn-primary">Book Now</a>
-        </div>
-      </div>
-
-      <div class="card" style="">
-        <img class="card-img-top" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi1.ytimg.com%2Fvi%2F1umKGrEW_U8%2Fmaxresdefault.jpg&f=1&nofb=1" alt="Card image">
-        <div class="card-body">
-          <h5 class="card-title">Rainbow Road</h5>
-          <p class="card-details">details for card go here...</p>
-          <p class="card-price">price</p>
-          <a href="#" class="btn btn-primary">Book Now</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="home-container-v2">
-    <div class="row">
-      <div class="home-container">
-        <div class="card" style="">
-          <img class="card-img-top" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi1.ytimg.com%2Fvi%2F1umKGrEW_U8%2Fmaxresdefault.jpg&f=1&nofb=1" alt="Card image">
+      <% @venues.each do |venue| %>
+        <div class="card">
+          <img class="card-img-top" src="<%= venue.picture_url %>" alt="Card image">
           <div class="card-body">
-            <h5 class="card-title">Rainbow Road</h5>
-            <p class="card-details">details for card go here...</p>
-            <p class="card-price">price</p>
-            <a href="#" class="btn btn-primary">Book Now</a>
+            <h5 class="card-title"><%= venue.name %></h5>
+            <p class="card-details"><%= venue.description %></p>
+            <p class="card-details">Room Size: <%= venue.room_size %></p>
+            <p class="card-price">$<%= venue.price_per_hour %></p>
+            <a href="<%= venue_path(venue) %>" class="btn btn-primary">Book Now</a>
           </div>
         </div>
+      <% end %>
 
-        <div class="card" style="">
-          <img class="card-img-top" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi1.ytimg.com%2Fvi%2F1umKGrEW_U8%2Fmaxresdefault.jpg&f=1&nofb=1" alt="Card image">
-          <div class="card-body">
-            <h5 class="card-title">Rainbow Road</h5>
-            <p class="card-details">details for card go here...</p>
-            <p class="card-price">price</p>
-            <a href="#" class="btn btn-primary">Book Now</a>
-          </div>
-        </div>
-
-        <div class="card" style="">
-          <img class="card-img-top" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi1.ytimg.com%2Fvi%2F1umKGrEW_U8%2Fmaxresdefault.jpg&f=1&nofb=1" alt="Card image">
-          <div class="card-body">
-            <h5 class="card-title">Rainbow Road</h5>
-            <p class="card-details">details for card go here...</p>
-            <p class="card-price">price</p>
-            <a href="#" class="btn btn-primary">Book Now</a>
-          </div>
-        </div>
-
-        <div class="card" style="">
-          <img class="card-img-top" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi1.ytimg.com%2Fvi%2F1umKGrEW_U8%2Fmaxresdefault.jpg&f=1&nofb=1" alt="Card image">
-          <div class="card-body">
-            <h5 class="card-title">Rainbow Road</h5>
-            <p class="card-details">details for card go here...</p>
-            <p class="card-price">price</p>
-            <a href="#" class="btn btn-primary">Book Now</a>
-          </div>
-        </div>
       </div>
     </div>
   </div>
