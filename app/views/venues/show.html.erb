@@ -3,3 +3,11 @@
 <p><%= @venue.location %></p>
 <p><%= @venue.price_per_hour.to_s %></p>
 <p><%= @venue.room_size %></p>
+
+
+
+<%= simple_form_for [ @venue, @booking ] do |f| %>
+  <%= f.input :start_time %>
+  <%= f.input :duration %>
+  <%= f.submit "Submit Booking", class: "btn btn-primary" %>
+<% end %>

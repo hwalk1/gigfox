@@ -1,4 +1,5 @@
 class Booking < ApplicationRecord
+  attr_accessor :duration
   belongs_to :user
   belongs_to :venue
 
