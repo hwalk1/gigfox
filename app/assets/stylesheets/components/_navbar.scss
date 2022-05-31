@@ -1,12 +1,25 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.btn {
+  color: #FFBA94;
+  border: 3px solid #FFBA94;
+  border-radius: 40px;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.btn:hover {
+  background-color: #FFBA94;
+  color: white;
+  border: 3px solid #ffffff;
+  border-radius: 40px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.form-control {
+  border: 3px solid #FFBA94;
+  border-radius: 40px;
+}
+
+.dropdown-menu {
+  border-radius: 10px;
+}
+
+.nav-item {
+  padding-left: 100px;
 }
