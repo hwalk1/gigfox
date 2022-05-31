@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'venues#index'
-  GET '/dashboard', to: 'pages#dashboard', as: :dashboard
+  get '/dashboard', to: 'pages#dashboard', as: :dashboard
 
   resources :venues, only: [:show, :create, :new, :edit, :update, :destroy] do
     resources :bookings, only: [:create]
