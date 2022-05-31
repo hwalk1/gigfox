@@ -19,11 +19,11 @@ puts "---------"
 
 puts "Creating Venues"
 puts "---------"
-espy = Venue.create(name:"Espy",description:"This is an amazing venue for live rock music",location:"11 The Esplanade, St Kilda VIC 3182", price_per_hour: 500, room_size:"Large", user_id: aren.id)
-Venue.create(name:"Northcote Social Club",description:"One of the best live music venues in Melbourne",location:"301 High St, Northcote VIC 3070", price_per_hour: 300, room_size:"Medium", user_id: aren.id)
-forum = Venue.create(name:"The Forum",description:"Long-running, buzzing bar with outdoor seats, for free live music downstairs and big names upstairs.",location:"29 Fitzroy St, St Kilda VIC 3182", price_per_hour: 800, room_size:"Extra Large", user_id: hayden.id)
-Venue.create(name:"Brunswick Ballroom",description:"This is a suburb gem!",location:"314 Sydney Rd, Brunswick VIC 3056", price_per_hour: 300, room_size:"Medium", user_id: hayden.id)
-Venue.create(name:"Cherry Bar",description:"Iconic, raucous bar featuring a lineup of local & international rock 'n' roll acts.",location:"68 Little Collins St, Melbourne VIC 3000", price_per_hour: 200, room_size:"Small", user_id: hayden.id)
+espy = Venue.create(name:"Espy",description:"This is an amazing venue for live rock music",location:"11 The Esplanade, St Kilda VIC 3182", price_per_hour: 500, room_size:"Large", user_id: aren.id, picture_url:"https://mixdownmag.com.au/wp-content/uploads/2020/12/mixdown-magazine-a-gig-you-say.jpg")
+Venue.create(name:"Northcote Social Club",description:"One of the best live music venues in Melbourne",location:"301 High St, Northcote VIC 3070", price_per_hour: 300, room_size:"Medium", user_id: aren.id, picture_url:"https://mixdownmag.com.au/wp-content/uploads/2020/12/mixdown-magazine-a-gig-you-say.jpg")
+forum = Venue.create(name:"The Forum",description:"Long-running, buzzing bar with outdoor seats, for free live music downstairs and big names upstairs.",location:"29 Fitzroy St, St Kilda VIC 3182", price_per_hour: 800, room_size:"Extra Large", user_id: hayden.id, picture_url:"https://mixdownmag.com.au/wp-content/uploads/2020/12/mixdown-magazine-a-gig-you-say.jpg")
+Venue.create(name:"Brunswick Ballroom",description:"This is a suburb gem!",location:"314 Sydney Rd, Brunswick VIC 3056", price_per_hour: 300, room_size:"Medium", user_id: hayden.id, picture_url:"https://mixdownmag.com.au/wp-content/uploads/2020/12/mixdown-magazine-a-gig-you-say.jpg")
+Venue.create(name:"Cherry Bar",description:"Iconic, raucous bar featuring a lineup of local & international rock 'n' roll acts.",location:"68 Little Collins St, Melbourne VIC 3000", price_per_hour: 200, room_size:"Small", user_id: hayden.id, picture_url:"https://mixdownmag.com.au/wp-content/uploads/2020/12/mixdown-magazine-a-gig-you-say.jpg")
 
 Venue.all.each { |ven| puts ven.name}
 puts "---------"
