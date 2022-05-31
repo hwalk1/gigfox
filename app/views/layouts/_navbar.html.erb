@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="#">Venue Owner ?</a>
+          <li><%= link_to 'Venue Owner?', dashboard_path, class: 'nav-link' %>
         </li>
       </ul>
     </div>
@@ -17,9 +17,9 @@
     My Profile
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">My Dashboard</a></li>
-    <li><a class="dropdown-item" href="#">My Settings</a></li>
-    <li><a class="dropdown-item" href="#">Log Out</a></li>
+    <li><%= link_to 'My Dashboard', dashboard_path, class: 'dropdown-item' %></li>
+    <li><%= link_to 'My Settings', edit_user_registration_path, class: 'dropdown-item' %></li>
+    <li><%= link_to 'Log Out', destroy_user_session_path, class: 'dropdown-item', method: 'delete' %></li>
   </ul>
 </div>
 
