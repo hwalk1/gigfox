@@ -16,14 +16,39 @@
   transition: 0.8s;
 }
 
+.card.home {
+  cursor: pointer;
+  border-radius:20px;
+  outline:1px black;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 1px 1px 5px rgb(140, 140, 140);
+  background: transparentize($white, 0.8);
+  backdrop-filter: blur(20px);
+
+
+  &:hover{
+    transform: scale(102%);
+    transition-duration: 500ms;
+    transition-timing-function: ease-in-out;
+  }
+}
+
 .card {
   border-radius:20px;
   outline:1px black;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: transparentize($white, 0.8);
+  backdrop-filter: blur(20px);
 }
 
 .card-img-top {
   border-top-left-radius:20px;
   border-top-right-radius:20px;
+  box-shadow: 1px 1px 5px rgb(140, 140, 140);
 }
 
 .card-body {
