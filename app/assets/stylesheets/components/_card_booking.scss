@@ -1,0 +1,21 @@
+.card-booking {
+  height: 250px;
+  a {
+    text-decoration: none;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+  p {
+    margin-bottom: 5px;
+  }
+  div {
+    position: relative;
+  }
+}
+
+
+.img-booking {
+  height: 100%;
+  object-fit: cover;
+}

@@ -1,11 +1,12 @@
 
-<div class="shadow rounded d-flex">
-  <img src="<%= booking.venue.picture_url%>" alt="" height="150px" width="150px">
-  <div class="p-2">
+<div class="shadow rounded d-flex card-booking my-4">
+  <img class="img-booking rounded-start" src="<%= booking.venue.picture_url%>" alt="venue image" height="150px" width="150px">
+  <div class="p-3">
     <h4><%= booking.venue.name %></h4>
     <p><%= booking.venue.location %></p>
-    <p>Total Cost: $<%= booking.total_price %>0</p>
-    <%= link_to 'Delete',
+    <p><b>Total Cost: $<%= booking.total_price %>0</b></p>
+    <p><b><%= booking.start_time.strftime("%a, %-d %b %l%P") %> -<%= booking.end_time.strftime("%l%P") %></b></p>
+    <%= link_to 'Withdraw',
         booking_path(booking),
         method: 'delete',
         data: { confirm: "Are you sure?" },
