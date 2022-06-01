@@ -9,4 +9,10 @@ class Booking < ApplicationRecord
   validates :status, presence: true, inclusion: [1, 2, 3]
   validates :venue_id, presence: true
   validates :user_id, presence: true
+
+  enum status: {
+    pending: 0,
+    active: 1,
+    archived: 2
+  }
 end
