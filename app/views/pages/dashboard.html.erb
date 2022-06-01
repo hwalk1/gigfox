@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Dashboard</h1>
+
+
+  <ul class="nav nav-pills my-3" id="tab" role="tablist">
+    <li class="nav-item ps-0" role="presentation">
+      <button class="nav-link active" id="bookings-tab" data-bs-toggle="pill" data-bs-target="#bookings" type="button" role="tab" aria-controls="bookings" aria-selected="true">My Bookings</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="venues-tab" data-bs-toggle="pill" data-bs-target="#venues" type="button" role="tab" aria-controls="venues" aria-selected="false">My Venues</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="venue-bookings-tab" data-bs-toggle="pill" data-bs-target="#venue-bookings" type="button" role="tab" aria-controls="venue-bookings" aria-selected="false">Venue Bookings</button>
+    </li>
+  </ul>
+  <div class="tab-content" id="tabContent">
+    <div class="tab-pane fade show active" id="bookings" role="tabpanel" aria-labelledby="home-tab">
+        <%= render 'bookings' %>
+    </div>
+    <div class="tab-pane fade" id="venues" role="tabpanel" aria-labelledby="venues-tab">
+        <%= render 'venues' %>
+    </div>
+    <div class="tab-pane fade" id="venue-bookings" role="tabpanel" aria-labelledby="venue-bookings-tab">
+        <%= render 'venue_bookings' %>
+    </div>
+  </div>
+
+
+
+</div>

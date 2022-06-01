@@ -6,9 +6,6 @@ class Booking < ApplicationRecord
   validates :start_time, presence: true
   validates :end_time, presence: true
   validates :total_price, presence: true
-  validates :status, presence: true, inclusion: [1, 2, 3]
-  validates :venue_id, presence: true
-  validates :user_id, presence: true
 
   enum status: {
     pending: 0,
