@@ -25,3 +25,23 @@
   border-top-left-radius:20px;
   border-top-right-radius:20px;
 }
+
+.card-body {
+  display: flex;
+  flex-direction: inherit;
+  justify-content: space-between;
+}
+
+.card-title {
+  text-decoration-line: underline;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.card-details {
+  color: rgb(141, 141, 141);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
