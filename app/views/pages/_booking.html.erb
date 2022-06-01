@@ -1,0 +1,27 @@
+
+<h3>Pending</h3>
+<% @bookings.each do |booking| %>
+  <% if booking.pending %>
+    <div>
+      <%= booking.venue.name %>
+    </div>
+  <% end %>
+<% end %>
+
+<h3>Accepted</h3>
+<% @bookings.each do |booking| %>
+  <% if booking.active %>
+    <div>
+      <%= booking.venue.name %>
+    </div>
+  <% end %>
+<% end %>
+
+<h3>Declined</h3>
+<% @bookings.each do |booking| %>
+  <% if booking.archived %>
+    <div>
+      <%= booking.venue.name %>
+    </div>
+  <% end %>
+<% end %>

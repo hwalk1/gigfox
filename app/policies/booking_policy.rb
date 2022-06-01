@@ -16,4 +16,8 @@ class BookingPolicy < ApplicationPolicy
   def destroy?
     record.user == user || record.venue.user == user
   end
+
+  def dashboard?
+    true
+  end
 end
