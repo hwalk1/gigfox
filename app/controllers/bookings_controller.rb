@@ -9,13 +9,14 @@ class BookingsController < ApplicationController
     @booking.total_price = @venue.price_per_hour * @booking.duration.to_i
     @booking.end_time = @booking.start_time + @booking.duration.to_i.hours
     @booking.save
-    redirect_to root_path
+    redirect_to dashboard_path
   end
 
   def destroy
     @booking = Booking.find(params[:id])
     authorize @booking
     @booking.destroy
+    redirect_to dashboard_path
   end
 
   private

@@ -4,7 +4,6 @@
 <div class="container">
   <div class="row">
     <div class="home-container">
-
       <% @venues.each do |venue| %>
         <div class="card">
           <img class="card-img-top" src="<%= venue.picture_url %>" alt="Card image">
@@ -13,12 +12,14 @@
             <p class="card-details"><%= venue.description %></p>
             <p class="card-details">Room Size: <%= venue.room_size %></p>
             <p class="card-price">$<%= venue.price_per_hour %></p>
-            <%= link_to 'Book Now', venue_path(venue), class:"btn btn-primary" %>
+
+            <%= link_to 'Book Now', venue_path(venue), class:"btn stretched-link" %>
           </div>
         </div>
       <% end %>
 
       </div>
+
     </div>
   </div>
 </div>

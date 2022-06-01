@@ -1,19 +1,2 @@
-<div class="container" data-controller="total-cost" data-total-cost-price-value = "<%= @venue.price_per_hour.to_i %>" >
-  <div class="row">
-    <img src="<%= @venue.picture_url %>" alt="Venue image" >
-    <h1 ><%= @venue.name %></h1>
-    <p><%= @venue.description %></p>
-    <p><%= @venue.location %></p>
-    <p data-total-cost-target="venueprice"><%= @venue.price_per_hour.to_s %></p>
-    <p><%= @venue.room_size %></p>
-    <%= simple_form_for [ @venue, @booking ] do |f| %>
-      <%= f.input :start_time %>
-      <%= f.input :duration, collection: 1..24, include_blank: false, input_html: { data: {action: "change->total-cost#showTotal"}} %>
-        <p >Total: <span data-total-cost-target="price"></span></p>
-      <%= f.submit "Submit Booking", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-  <div>
+<%= render "layouts/expanded" %>
 
-  </div>
-</div>
