@@ -3,32 +3,77 @@
 </head>
 
 
-<div class="container">
-  <div class="card mb-3" data-controller="total-cost" data-total-cost-price-value = "<%= @venue.price_per_hour.to_i %>">
-    <div class="row">
-      <div class="col-8 card">
-        <div class="expanded-card">
-          <img class="card-img-top" src="<%= @venue.picture_url %>" alt="Venue image">
-          <h1><%= @venue.name %></h1>
-          <p><%= @venue.description %></p>
-          <p><%= @venue.location %></p>
-          <p><%= @venue.price_per_hour.to_s %></p>
-          <p><%= @venue.room_size %></p>
-      <%= simple_form_for [ @venue, @booking ] do |f| %>
-        <%= f.input :start_time %>
-        <%= f.input :duration, collection: 1..24, include_blank: false, input_html: { data: {action: "change->total-cost#showTotal"}} %>
-        <p >Total: <span data-total-cost-target="price"></span></p>
-        <%= f.submit "Submit Booking", class: "btn" %>
-      <% end %>
-    </div>
+<div class="container" data-controller="total-cost" data-total-cost-price-value = "<%= @venue.price_per_hour.to_i %>">
+  <div class="row gx-5">
+    <div class="col-7 card gx-0">
+      <div class="expanded-card">
+        <img class="card-img-top" src="<%= @venue.picture_url %>" alt="Venue image">
+        <h1><%= @venue.name %></h1>
+        <p class="details-list">Description</p>
+        <p><%= @venue.description %></p>
+        <p class="details-list">Location</p>
+        <p><%= @venue.location %></p>
+        <p class="details-list">Price</p>
+        <p><%= @venue.price_per_hour.to_s %></p>
+        <p class="details-list"></p>
+        <p><%= @venue.room_size %></p>
       </div>
+    </div>
 
-      <div class="col-4">
+      <div class="col-5">
         <div class="row">
-          <div class="col-10 card justify-content-between">
-          <h1>hello</h1>
+          <div class="col-10 card">
+          <h1>Book Now</h1>
+          <%= simple_form_for [ @venue, @booking ] do |f| %>
+            <%= f.input :start_time %>
+            <%= f.input :duration, collection: 1..24, include_blank: false, input_html: { data: {action: "change->total-cost#showTotal"}} %>
+            <p >Total: <span data-total-cost-target="price"></span></p>
+            <%= f.submit "Submit Booking", class: "btn" %>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-10 card gy-5">
+          <h1>Related Venues</h1>
+            <div class="row justify-content-center">
+              <div class="col-3 card">
+                <p>tag</p>
+              </div>
+
+              <div class="col-3 card">
+                <p>tag</p>
+              </div>
+
+              <div class="col-3 card">
+                <p>tag</p>
+              </div>
+
+              <div class="col-3 card">
+                <p>tag</p>
+              </div>
+            </div>
+
+            <div class="row justify-content-center">
+              <div class="col-3 card">
+                <p>tag</p>
+              </div>
+
+              <div class="col-3 card">
+                <p>tag</p>
+              </div>
+
+              <div class="col-3 card">
+                <p>tag</p>
+              </div>
+
+              <div class="col-3 card">
+                <p>tag</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 </div>
