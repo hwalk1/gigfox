@@ -8,7 +8,6 @@ class BookingsController < ApplicationController
     @booking.venue = @venue
     @booking.total_price = @venue.price_per_hour * @booking.duration.to_i
     @booking.end_time = @booking.start_time + @booking.duration.to_i.hours
-    @booking.status = 1
     @booking.save
     redirect_to dashboard_path
   end
