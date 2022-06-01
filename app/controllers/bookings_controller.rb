@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
     @booking.end_time = @booking.start_time + @booking.duration.to_i.hours
     @booking.status = 1
     @booking.save
-    redirect_to root_path
+    redirect_to dashboard_path
   end
 
   def destroy
