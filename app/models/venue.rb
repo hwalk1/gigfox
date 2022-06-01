@@ -7,5 +7,4 @@ class Venue < ApplicationRecord
   validates :location, presence: true
   validates :price_per_hour, presence: true
   validates :room_size, presence: true
-  validates :user_id, presence: true
 end

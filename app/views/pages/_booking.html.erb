@@ -1,27 +1,14 @@
 
-<h3>Pending</h3>
-<% @bookings.each do |booking| %>
-  <% if booking.pending %>
-    <div>
-      <%= booking.venue.name %>
-    </div>
-  <% end %>
-<% end %>
-
-<h3>Accepted</h3>
-<% @bookings.each do |booking| %>
-  <% if booking.active %>
-    <div>
-      <%= booking.venue.name %>
-    </div>
-  <% end %>
-<% end %>
-
-<h3>Declined</h3>
-<% @bookings.each do |booking| %>
-  <% if booking.archived %>
-    <div>
-      <%= booking.venue.name %>
-    </div>
-  <% end %>
-<% end %>
+<div class="shadow rounded d-flex">
+  <img src="<%= booking.venue.picture_url%>" alt="" height="150px" width="150px">
+  <div class="p-2">
+    <h4><%= booking.venue.name %></h4>
+    <p><%= booking.venue.location %></p>
+    <p>Total Cost: $<%= booking.total_price %>0</p>
+    <%= link_to 'Delete',
+        booking_path(booking),
+        method: 'delete',
+        data: { confirm: "Are you sure?" },
+        class: 'text-danger' %>
+  </div>
+</div>

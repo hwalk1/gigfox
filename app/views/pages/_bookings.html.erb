@@ -1,0 +1,27 @@
+
+<div class="col-4">
+  <h3>Pending</h3>
+  <% @bookings.each do |booking| %>
+    <% if booking.status == 'pending' %>
+      <%= render 'booking', booking: booking %>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="col-4">
+  <h3>Accepted</h3>
+  <% @bookings.each do |booking| %>
+    <% if booking.status == 'active' %>
+      <%= render 'booking', booking: booking %>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="col-4">
+  <h3>Declined</h3>
+  <% @bookings.each do |booking| %>
+    <% if booking.status == 'archived' %>
+      <%= render 'booking', booking: booking %>
+    <% end %>
+  <% end %>
+</div>
