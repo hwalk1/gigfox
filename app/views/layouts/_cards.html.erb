@@ -7,13 +7,11 @@
     <div class="home-container">
       <% @venues.each do |venue| %>
         <div class="card home">
-
           <img class="card-img-top" src="<%= venue.picture_url %>" alt="Card image">
           <div class="card-body text-center">
             <div class="card-info d-flex flex-column justify-content-between">
               <h5 class="card-title"><strong><%= venue.name %></strong></h5>
               <p class="card-details"><%= venue.description %></p>
-
               <div class="d-flex justify-content-around">
                 <div>
                   <i class="fa-solid fa-people-group"></i>
