@@ -4,9 +4,11 @@
       <%= image_tag 'welcome-fox-1.png', height:80  %>
     <% end %>
     <form class="d-flex">
-        <input class="search-bar" type="search" placeholder="  Search" aria-label="Search">
+        <input class="search-bar ps-3" type="search" placeholder="Search" aria-label="Search">
         <button class="btn" type="submit">Search</button>
       </form>
+      <div class="d-flex">
+
     <div class="venue-owner" id="navbarTogglerDemo02">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
@@ -28,6 +30,6 @@
     <%= link_to 'Sign In', new_user_session_path, class:"btn" %>
   <% end %>
 </div>
-
+</div>
   </div>
 </nav>
