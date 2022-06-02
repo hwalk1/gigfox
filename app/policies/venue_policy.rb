@@ -1,8 +1,12 @@
 class VenuePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      Venue.all
     end
+  end
+
+  def index?
+    true
   end
 
   def show?
