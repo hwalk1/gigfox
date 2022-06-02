@@ -9,7 +9,7 @@ class VenuesController < ApplicationController
         lat: venue.latitude,
         lng: venue.longitude,
         info_window: render_to_string(partial: "info_window", locals: { venue: venue }),
-        image_url: helpers.asset_url(venue.picture_url)
+        image_url: venue.picture_url
       }
     end
   end
@@ -24,16 +24,25 @@ class VenuesController < ApplicationController
         lat: @venue.latitude,
         lng: @venue.longitude,
         info_window: render_to_string(partial: "info_window", locals: { venue: @venue }),
-        image_url: helpers.asset_url(@venue.picture_url)
+        #image_url: helpers.asset_url(@venue.picture_url)
       }]
   end
 
   def new
+    @venue = Venue.new
     authorize @venue
   end
 
   def create
+    @venue = Venue.new(venue_params)
     authorize @venue
+    @venue.user = current_user
+    if @venue.save
+      redirect_to venue_path(@venue), notice: "Successfully created a venue"
+    else
+      render :new
+    end
+
   end
 
   def edit
