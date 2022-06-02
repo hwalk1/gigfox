@@ -1,6 +1,5 @@
 class BookingsController < ApplicationController
   def create
-
     @venue = Venue.find(params[:venue_id])
     @booking = Booking.new(booking_params)
     authorize @booking
@@ -19,9 +18,24 @@ class BookingsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def update
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    if params[:status] == 'active'
+      @booking.active!
+    elsif params[:status] == 'archived'
+      @booking.archived!
+    end
+    redirect_to dashboard_path
+  end
+
   private
 
   def booking_params
     params.require(:booking).permit(:start_time, :duration)
+  end
+
+  def update_params
+    params.require(:status).permit(:active, :archived)
   end
 end
