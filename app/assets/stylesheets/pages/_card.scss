@@ -16,6 +16,15 @@
   transition: 0.8s;
 }
 
+.btn.book {
+  opacity: 0;
+
+  &:hover {
+    transition: all 500ms ease-in-out;
+    opacity:1
+  }
+}
+
 .card.home {
   cursor: pointer;
   border-radius:20px;
