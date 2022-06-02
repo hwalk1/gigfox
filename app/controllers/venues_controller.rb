@@ -2,7 +2,16 @@ class VenuesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @venues = policy_scope(Venue)
+    if params[:query].present?
+      sql_query = " \
+        venues.name ILIKE :query \
+        OR venues.description ILIKE :query \
+        OR venues.location ILIKE :query \
+      "
+      @venues = Venue.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @venues = Venue.all
+    end
 
     @markers = @venues.geocoded.map do |venue|
       {
