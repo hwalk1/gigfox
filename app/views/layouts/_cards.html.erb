@@ -9,15 +9,25 @@
         <div class="card home">
 
           <img class="card-img-top" src="<%= venue.picture_url %>" alt="Card image">
-          <div class="card-body">
-           <div>
-            <h5 class="card-title"><strong><%= venue.name %></strong></h5>
-            <p class="card-details"><%= venue.description %></p>
-            <p class="card-details">Room Size: <%= venue.room_size %></p>
-           </div>
-            <p class="card-price">$<%= venue.price_per_hour %></p>
+          <div class="card-body text-center">
+            <div class="card-info d-flex flex-column justify-content-between">
+              <h5 class="card-title"><strong><%= venue.name %></strong></h5>
+              <p class="card-details"><%= venue.description %></p>
 
-            <%= link_to 'Book Now', venue_path(venue), class:"btn stretched-link" %>
+              <div class="d-flex justify-content-around">
+                <div>
+                  <i class="fa-solid fa-people-group"></i>
+                  <p class="card-size"><%= venue.room_size %></p>
+                </div>
+                <div>
+                  <i class="fa-solid fa-dollar-sign"></i>
+                  <p class="card-price"><%= venue.price_per_hour %></p>
+                </div>
+                <%# <i class="fa-solid fa-location-dot"></i> %>
+              </div>
+            </div>
+
+            <%= link_to 'Book Now', venue_path(venue), class:"btn stretched-link w-100" %>
           </div>
         </div>
       <% end %>
