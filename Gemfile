@@ -68,3 +68,6 @@ gem 'devise'
 
 # adds user authorisation
 gem 'pundit'
+
+# geocode addresses
+gem "geocoder"
