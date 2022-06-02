@@ -9,7 +9,8 @@ class VenuesController < ApplicationController
         lat: venue.latitude,
         lng: venue.longitude,
         info_window: render_to_string(partial: "info_window", locals: { venue: venue }),
-        # image_url: helpers.asset_url(venue.picture_url)
+        map_marker: render_to_string(partial: "map_marker", locals: { venue: venue }),
+        # image_url: @venue.picture_url || "https://res.cloudinary.com/hwalk1/image/upload/v1654148153/#{Rails.env}/#{@venue.photo.key}.jpg"
       }
     end
   end
@@ -24,7 +25,8 @@ class VenuesController < ApplicationController
         lat: @venue.latitude,
         lng: @venue.longitude,
         info_window: render_to_string(partial: "info_window", locals: { venue: @venue }),
-        # image_url: helpers.asset_url(@venue.picture_url)
+        map_marker: render_to_string(partial: "map_marker", locals: { venue: @venue }),
+        # image_url: @venue.picture_url || "https://res.cloudinary.com/hwalk1/image/upload/v1654148153/#{Rails.env}/#{@venue.photo.key}.jpg"
       }]
   end
 
@@ -35,10 +37,14 @@ class VenuesController < ApplicationController
 
   def create
     @venue = Venue.new(venue_params)
-    @venue.user = current_user
-    @venue.save
     authorize @venue
-    redirect_to venue_path(@venue)
+    @venue.user = current_user
+    if @venue.save
+      redirect_to venue_path(@venue), notice: "Successfully created a venue"
+    else
+      render :new
+    end
+
   end
 
   def edit

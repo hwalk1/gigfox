@@ -1,0 +1,2 @@
+<% image_url = venue.photo.attached? ? cl_image_path(venue.photo.key) : venue.picture_url %>
+<div class = "mapmarker" style = "background-image: url(<%= image_url %>) "></div>
