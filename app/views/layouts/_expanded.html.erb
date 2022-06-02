@@ -27,17 +27,19 @@
     </div>
 
     <div class="col-5">
+  <div class="book-now">
       <div class="row">
-        <div class="col-10 card">
-          <h1>Book Now</h1>
+        <div class="col-14 card p-3">
+          <h1 class="text-center">Book Now</h1>
           <%= simple_form_for [ @venue, @booking ] do |f| %>
             <%= f.input :start_time %>
             <%= f.input :duration, collection: 1..24, include_blank: false, input_html: { data: {action: "change->total-cost#showTotal"}} %>
             <p >Total: <span data-total-cost-target="price"></span></p>
-            <%= f.submit "Submit Booking", class: "btn" %>
+            <%= f.submit "Submit Booking", class: "btn w-100" %>
           <% end %>
         </div>
       </div>
+  </div>
 
 
       <div class="row">
