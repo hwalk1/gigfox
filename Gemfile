@@ -71,3 +71,6 @@ gem 'pundit'
 
 # geocode addresses
 gem "geocoder"
+
+#Cloudinary Image Hosting
+gem 'cloudinary'

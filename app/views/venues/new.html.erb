@@ -1,0 +1,13 @@
+<div class = "container" data-controller="geocoder" >
+  <%= simple_form_for(@venue) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description, as: :text %>
+    <%= f.input :location,
+                input_html: { data: { geocoder_target: "location" }, class: "d-none"},
+                wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
+    <%= f.input :price_per_hour %>
+    <%= f.input :room_size, collection: %w(Small Medium Large Extra-Large Stadium)%>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit class: "btn btn-primary" %>
+  <% end %>
+</div>
