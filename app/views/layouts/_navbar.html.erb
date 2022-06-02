@@ -7,11 +7,12 @@
     <%= form_tag root_path, method: :get do %>
       <%= text_field_tag :query,
         params[:query],
-        class: "search-bar",
+        class: "search-bar ps-3",
         placeholder: "Find a Venue"
       %>
       <%= submit_tag "Search", class: "btn" %>
     <% end %>
+
     <div class="venue-owner" id="navbarTogglerDemo02">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
@@ -33,6 +34,6 @@
     <%= link_to 'Sign In', new_user_session_path, class:"btn" %>
   <% end %>
 </div>
-
+</div>
   </div>
 </nav>
