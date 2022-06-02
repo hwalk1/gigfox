@@ -24,7 +24,7 @@ class VenuesController < ApplicationController
         lat: @venue.latitude,
         lng: @venue.longitude,
         info_window: render_to_string(partial: "info_window", locals: { venue: @venue }),
-        #image_url: helpers.asset_url(@venue.picture_url)
+        image_url: @venue.picture_url
       }]
   end
 
@@ -55,5 +55,12 @@ class VenuesController < ApplicationController
 
   def destroy
     authorize @venue
+  end
+
+
+  private
+
+  def venue_params
+    params.require(:venue).permit(:name, :description, :location, :price_per_hour, :room_size, :photo) #Says look inside params, look for a key restaurant and permit categories.
   end
 end
