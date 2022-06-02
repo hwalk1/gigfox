@@ -7,12 +7,11 @@
   <div class="row gx-5">
     <div class="card col-7 gx-0">
       <div class="row">
-
        <% if defined?@venue.photo.key%>
-            <%= cl_image_tag @venue.photo.key, class: "card-img-top" %>
-            <%else%>
-            <img class="card-img-top" src="<%= @venue.picture_url %>" alt="Card image">
-            <% end %>
+          <%= cl_image_tag @venue.photo.key, class: "card-img-top" %>
+          <%else%>
+          <img class="card-img-top expanded" src="<%= @venue.picture_url %>" alt="Card image">
+          <% end %>
         <div class="expanded-card text-center">
           <div class="d-flex flex-column justify-content-between">
             <h1><%= @venue.name %></h1>
@@ -47,46 +46,48 @@
       </div>
     </div>
     <div class="col-5">
-  <div class="book-now">
-      <div class="row">
-        <div class="col-14 card p-3">
-          <h1 class="text-center">Book Now</h1>
-          <%= simple_form_for [ @venue, @booking ] do |f| %>
-            <%= f.input :start_time, as: :string, input_html: {class: "datepicker", data: { controller: 'flatpickr'}} %>
-            <%= f.input :duration, collection: 1..24, include_blank: false, input_html: { data: {action: "change->total-cost#showTotal"}} %>
-            <p >Total: <span data-total-cost-target="price"></span></p>
-            <%= f.input :song_url %>
-            <%= f.submit "Submit Booking", class: "btn w-100" %>
-          <% end %>
-        </div>
-      </div>
-  </div>
-
-
-      <div class="row">
-        <div class="col-10 card gy-5">
-        <h1>Related Venues</h1>
-          <div class="row justify-content-center">
-            <div class="col-3 card">
-              <p>tag</p>
-            </div>
-
-            <div class="col-3 card">
-              <p>tag</p>
-            </div>
-
-            <div class="col-3 card">
-              <p>tag</p>
-            </div>
-
-            <div class="col-3 card">
-              <p>tag</p>
-            </div>
-
-          </div>
+      <div class="book-now">
+        <div class="row">
+          <div class="card p-3">
+            <h1 class="text-center">Book Now</h1>
+            <%= simple_form_for [ @venue, @booking ] do |f| %>
+              <%= f.input :start_time, as: :string, input_html: {class: "datepicker", data: { controller: 'flatpickr'}} %>
+              <%= f.input :duration, collection: 1..24, include_blank: false, input_html: { data: {action: "change->total-cost#showTotal"}} %>
+              <p >Total: <span data-total-cost-target="price"></span></p>
+              <%= f.input :song_url %>
+              <%= f.submit "Submit Booking", class: "btn w-100" %>
+            <% end %>
           </div>
         </div>
       </div>
     </div>
+
+
   </div>
 </div>
+<%# can be added for tags %>
+
+<%# <div class="row">
+  <div class="col-10 card gy-5">
+  <h1>Related Venues</h1>
+    <div class="row justify-content-center">
+      <div class="col-3 card">
+        <p>tag</p>
+      </div>
+
+      <div class="col-3 card">
+        <p>tag</p>
+      </div>
+
+      <div class="col-3 card">
+        <p>tag</p>
+      </div>
+
+      <div class="col-3 card">
+        <p>tag</p>
+      </div>
+
+    </div>
+    </div>
+  </div>
+</div> %>
