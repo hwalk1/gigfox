@@ -1,76 +1,66 @@
 <head>
   <link href=”https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css” rel=”stylesheet” integrity=”sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU” crossorigin=”anonymous”>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 </head>
-
 
 <div class="container" data-controller="total-cost" data-total-cost-price-value = "<%= @venue.price_per_hour.to_i %>">
   <div class="row gx-5">
     <div class="col-7 card gx-0">
-      <div class="expanded-card">
+      <div class="row">
         <img class="card-img-top" src="<%= @venue.picture_url %>" alt="Venue image">
-        <h1><%= @venue.name %></h1>
-        <p class="details-list">Description</p>
-        <p><%= @venue.description %></p>
-        <p class="details-list">Location</p>
-        <p><%= @venue.location %></p>
-        <p class="details-list">Price</p>
-        <p><%= @venue.price_per_hour.to_s %></p>
-        <p class="details-list"></p>
-        <p><%= @venue.room_size %></p>
+        <div class="expanded-card">
+          <h1><%= @venue.name %></h1>
+          <%# <p class="details-list">Description</p> %>
+          <%# description %>
+          <p><i class="fa-solid fa-asterisk"></i>&nbsp;<%= @venue.description %></p>
+          <%# <p class="details-list">location</p> %>
+          <%# location %>
+          <p><i class="fa-solid fa-location-dot"></i>&nbsp;<%= @venue.location %></p>
+          <%# <p class="details-list">price</p> %>
+          <%# price %>
+          <p><i class="fa-solid fa-dollar-sign"></i>&nbsp;<%= @venue.price_per_hour.to_s %></p>
+          <%# <p class="details-list">size</p> %>
+          <%# size %>
+          <p><i class="fa-solid fa-people-group"></i>&nbsp;<%= @venue.room_size %></p>
+        </div>
       </div>
     </div>
 
-      <div class="col-5">
-        <div class="row">
-          <div class="col-10 card">
+    <div class="col-5">
+      <div class="row">
+        <div class="col-10 card">
           <h1>Book Now</h1>
           <%= simple_form_for [ @venue, @booking ] do |f| %>
             <%= f.input :start_time %>
             <%= f.input :duration, collection: 1..24, include_blank: false, input_html: { data: {action: "change->total-cost#showTotal"}} %>
             <p >Total: <span data-total-cost-target="price"></span></p>
             <%= f.submit "Submit Booking", class: "btn" %>
-            <% end %>
-          </div>
+          <% end %>
         </div>
+      </div>
 
-        <div class="row">
-          <div class="col-10 card gy-5">
-          <h1>Related Venues</h1>
-            <div class="row justify-content-center">
-              <div class="col-3 card">
-                <p>tag</p>
-              </div>
 
-              <div class="col-3 card">
-                <p>tag</p>
-              </div>
-
-              <div class="col-3 card">
-                <p>tag</p>
-              </div>
-
-              <div class="col-3 card">
-                <p>tag</p>
-              </div>
+      <div class="row">
+        <div class="col-10 card gy-5">
+        <h1>Related Venues</h1>
+          <div class="row justify-content-center">
+            <div class="col-3 card">
+              <p>tag</p>
             </div>
 
-            <div class="row justify-content-center">
-              <div class="col-3 card">
-                <p>tag</p>
-              </div>
-
-              <div class="col-3 card">
-                <p>tag</p>
-              </div>
-
-              <div class="col-3 card">
-                <p>tag</p>
-              </div>
-
-              <div class="col-3 card">
-                <p>tag</p>
-              </div>
+            <div class="col-3 card">
+              <p>tag</p>
             </div>
+
+            <div class="col-3 card">
+              <p>tag</p>
+            </div>
+
+            <div class="col-3 card">
+              <p>tag</p>
+            </div>
+
+          </div>
           </div>
         </div>
       </div>
