@@ -1,6 +1,5 @@
 class BookingsController < ApplicationController
   def create
-
     @venue = Venue.find(params[:venue_id])
     @booking = Booking.new(booking_params)
     authorize @booking
@@ -8,6 +7,7 @@ class BookingsController < ApplicationController
     @booking.venue = @venue
     @booking.total_price = @venue.price_per_hour * @booking.duration.to_i
     @booking.end_time = @booking.start_time + @booking.duration.to_i.hours
+    @booking.song_url.match?(/(?<==).*/) && @booking.song_url = @booking.song_url.match(/(?<==).*/)[0]
     @booking.save
     redirect_to dashboard_path
   end
@@ -22,6 +22,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_time, :duration)
+    params.require(:booking).permit(:start_time, :duration, :song_url)
   end
 end

@@ -35,6 +35,7 @@
             <%= f.input :start_time %>
             <%= f.input :duration, collection: 1..24, include_blank: false, input_html: { data: {action: "change->total-cost#showTotal"}} %>
             <p >Total: <span data-total-cost-target="price"></span></p>
+            <%= f.input :song_url %>
             <%= f.submit "Submit Booking", class: "btn w-100" %>
           <% end %>
         </div>

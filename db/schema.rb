@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_01_221725) do
+ActiveRecord::Schema.define(version: 2022_06_02_044212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,10 +20,11 @@ ActiveRecord::Schema.define(version: 2022_06_01_221725) do
     t.bigint "venue_id", null: false
     t.datetime "start_time"
     t.datetime "end_time"
-    t.decimal "total_price"
+    t.integer "total_price"
     t.integer "status", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "song_url"
     t.index ["user_id"], name: "index_bookings_on_user_id"
     t.index ["venue_id"], name: "index_bookings_on_venue_id"
   end
@@ -47,7 +48,7 @@ ActiveRecord::Schema.define(version: 2022_06_01_221725) do
     t.string "name"
     t.text "description"
     t.string "location"
-    t.decimal "price_per_hour"
+    t.integer "price_per_hour"
     t.string "room_size"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false

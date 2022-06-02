@@ -6,6 +6,9 @@
     <p><%= booking.venue.location %></p>
     <p><b>Total Cost: $<%= booking.total_price %>0</b></p>
     <p><b><%= booking.start_time.strftime("%a, %-d %b %l%P") %> -<%= booking.end_time.strftime("%l%P") %></b></p>
+    <% if booking.song_url %>
+    <iframe width="200" height="50" src="https://www.youtube.com/embed/<%= booking.song_url %>?fs=0&modestbranding=1" title="YouTube video player" frameborder="0"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    <% end %>
     <%= link_to 'Withdraw',
         booking_path(booking),
         method: 'delete',
