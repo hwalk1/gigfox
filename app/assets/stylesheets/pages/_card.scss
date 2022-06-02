@@ -16,6 +16,15 @@
   transition: 0.8s;
 }
 
+.btn.book {
+  opacity: 0;
+
+  &:hover {
+    transition: all 500ms ease-in-out;
+    opacity:1
+  }
+}
+
 .card.home {
   cursor: pointer;
   border-radius:20px;
@@ -56,14 +65,16 @@
 }
 
 .card-body {
-  display: flex;
-  flex-direction: inherit;
-  justify-content: space-between;
+  // height: 350px;
+  i {
+    font-size: 24px;
+  }
 }
 
 .card-title {
   text-decoration-line: underline;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  height: 50px;
 }
 
 .card-details {
@@ -74,3 +85,6 @@
   height: 200px;
   object-fit: cover;
 }
+
+.card-info {
+  height: 250px;}

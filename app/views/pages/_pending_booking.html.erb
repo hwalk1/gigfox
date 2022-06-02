@@ -4,6 +4,13 @@
     <h4><%= booking.venue.name %></h4>
     <p><%= booking.venue.location %></p>
     <p>Total Cost: $<%= booking.total_price %>0</p>
-    <p>Accept       Decline</p>
+      <%= simple_form_for booking do |f|%>
+        <input type="hidden" name="status" value="active" autocomplete="off">
+        <%= f.submit "Accept" %>
+      <% end %>
+      <%= simple_form_for booking do |f|%>
+        <input type="hidden" name="status" value="archived" autocomplete="off">
+        <%= f.submit 'Decline'%>
+      <% end %>
   </div>
 </div>
