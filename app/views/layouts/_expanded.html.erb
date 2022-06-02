@@ -5,23 +5,38 @@
 
 <div class="container" data-controller="total-cost" data-total-cost-price-value = "<%= @venue.price_per_hour.to_i %>">
   <div class="row gx-5">
-    <div class="col-7 card gx-0">
+    <div class="card col-7 gx-0">
       <div class="row">
-        <img class="card-img-top" src="<%= @venue.picture_url %>" alt="Venue image">
-        <div class="expanded-card">
-          <h1><%= @venue.name %></h1>
-          <%# <p class="details-list">Description</p> %>
-          <%# description %>
-          <p><i class="fa-solid fa-asterisk"></i>&nbsp;<%= @venue.description %></p>
-          <%# <p class="details-list">location</p> %>
-          <%# location %>
-          <p><i class="fa-solid fa-location-dot"></i>&nbsp;<%= @venue.location %></p>
-          <%# <p class="details-list">price</p> %>
-          <%# price %>
-          <p><i class="fa-solid fa-dollar-sign"></i>&nbsp;<%= @venue.price_per_hour.to_s %></p>
-          <%# <p class="details-list">size</p> %>
-          <%# size %>
-          <p><i class="fa-solid fa-people-group"></i>&nbsp;<%= @venue.room_size %></p>
+        <img class="card-img-top expanded" src="<%= @venue.picture_url %>" alt="Venue image">
+        <div class="expanded-card text-center">
+          <div class="d-flex flex-column justify-content-between">
+            <h1><%= @venue.name %></h1>
+            <%# description %>
+            <p><i class="fa-solid fa-asterisk"></i>&nbsp;<%= @venue.description %></p>
+            <div class="info d-flex justify-content-around" style="margin: 20px;background: #ededed;border-radius: 10px;border: 1px solid #dbdbdb;">
+              <div class="col-4 p-3">
+                <%# price %>
+                <div class="icon">
+                  <i class="fa-solid fa-dollar-sign"></i>
+                </div>
+                <p><%= @venue.price_per_hour.to_s %></p>
+              </div>
+              <div class="col-4 p-3">
+                <%# location %>
+                <div class="icon">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <p><%= @venue.location %></p>
+              </div>
+              <div class="col-4 p-3">
+                <%# size %>
+                <div class="icon">
+                  <i class="fa-solid fa-people-group"></i>
+                </div>
+                <p><%= @venue.room_size %></p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

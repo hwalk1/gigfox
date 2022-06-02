@@ -15,9 +15,16 @@ hr.solid {
 }
 
 .expanded-card {
-  padding-left: 18px;
+  padding: 10px;
 }
 
-.book-now {
-  
+.icon {
+  font-size: 24px;
 }
+
+// .info {
+//   &:hover {
+//   transform: scale(100.5%);
+//   transition-duration: 0ms;
+//   }
+// }
