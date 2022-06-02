@@ -8,7 +8,7 @@
     <p><b><%= booking.start_time.strftime("%a, %-d %b %l%P") %> -<%= booking.end_time.strftime("%l%P") %></b></p>
     <%= link_to 'Withdraw',
         booking_path(booking),
-        method: 'delete',
+        method: :delete,
         data: { confirm: "Are you sure?" },
         class: 'text-danger' %>
   </div>
