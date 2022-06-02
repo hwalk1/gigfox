@@ -45,6 +45,10 @@
   backdrop-filter: blur(20px);
 }
 
+.card.main {
+  border-radius: 5px;
+}
+
 .card-img-top {
   border-top-left-radius:20px;
   border-top-right-radius:20px;
