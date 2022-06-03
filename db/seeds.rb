@@ -11,10 +11,10 @@ User.destroy_all
 
 
 puts "Creating Users"
-aren = User.create(name:"Aren", password:"123456", email:"aren@gmail.com")
+User.create(name:"Aren", password:"123456", email:"aren@gmail.com")
 hayden = User.create(name:"Hayden", password:"123456", email:"hayden@gmail.com")
 User.create(name:"Michael", password:"123456", email:"michael@gmail.com")
-User.create(name:"Lea", password:"123456", email:"lea@gmail.com")
+aren = User.create(name:"Lea", password:"123456", email:"lea@gmail.com")
 
 User.all.each { |use| puts use.name }
 puts "---------"
