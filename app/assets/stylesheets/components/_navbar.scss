@@ -16,3 +16,11 @@
   width: 350px;
   margin-right: 10px;
 }
+
+.navbar-brand {
+  transition: 500ms;
+  &:hover {
+    transform: scale(102%);
+    transition-duration: 500ms;
+  }
+}
