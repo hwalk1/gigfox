@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"> <%# fixed-top%>
-  <div class="container-fluid justify-content-around">
+  <div class="container-fluid justify-content-between">
     <%= link_to root_path, class:"navbar-brand" do %>
       <%= image_tag 'welcome-fox-1.png', height:80  %>
     <% end %>
@@ -16,25 +16,27 @@
       </button>
     <% end %>
 
-    <div class="venue-owner" id="navbarTogglerDemo02">
+    <%# <div class="venue-owner" id="navbarTogglerDemo02">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <li><%= link_to 'Venue Owner?', dashboard_path, class: 'nav-link' %>
-        </li>
-      </ul>
-    </div>
+        <%# </li> %>
+      <%# </ul> %>
+    <%# </div> %>
     <div class="dropdown">
-  <% if user_signed_in? %>
-    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-      My Profile
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-      <li><%= link_to 'My Dashboard', dashboard_path, class: 'dropdown-item' %></li>
-      <li><%= link_to 'Create a Venue', new_venue_path, class: 'dropdown-item' %></li>
-      <li><%= link_to 'My Settings', edit_user_registration_path, class: 'dropdown-item' %></li>
-      <li><%= link_to 'Log Out', destroy_user_session_path, class: 'dropdown-item', method: 'delete' %></li>
-    </ul>
-  <% else %>
-    <%= link_to 'Sign In', new_user_session_path, class:"btn" %>
-  <% end %>
+      <% if user_signed_in? %>
+        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          My Profile
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><%= link_to 'My Dashboard', dashboard_path, class: 'dropdown-item' %></li>
+          <li><%= link_to 'Create a Venue', new_venue_path, class: 'dropdown-item' %></li>
+          <li><%= link_to 'My Settings', edit_user_registration_path, class: 'dropdown-item' %></li>
+          <li><%= link_to 'Log Out', destroy_user_session_path, class: 'dropdown-item', method: 'delete' %></li>
+        </ul>
+      <% else %>
+        <%= link_to 'Sign In', new_user_session_path, class:"btn" %>
+      <% end %>
+    </div>
+  </div>
 </nav>

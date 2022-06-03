@@ -19,6 +19,10 @@ input:focus {
   }
 }
 
+.dropdown {
+  padding-right: 30px;
+}
+
 .dropdown-menu {
   border-radius: 10px;
 }
@@ -40,6 +44,9 @@ input:focus {
   }
 }
 
+.navbar {
+  height: 90px;
+}
 // .datepicker.search {
 //   height: 100%;
 // }
