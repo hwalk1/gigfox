@@ -1,5 +1,5 @@
 .card-booking {
-  height: 250px;
+  height: 300px;
   a {
     text-decoration: none;
     position: absolute;
@@ -11,6 +11,25 @@
   }
   div {
     position: relative;
+  }
+  .icon{
+  background: none;
+  border: none;
+  transition: 0.3s;
+  color: gray;
+  }
+  .icon-decline:hover {
+    color: red;
+  }
+  .icon-accept:hover {
+    color: #53df00;
+  }
+  .fa-trash {
+    color: gray;
+    transition: 0.3s;
+  }
+  .fa-trash:hover {
+    color: red;
   }
 }
 
