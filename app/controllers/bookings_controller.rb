@@ -22,12 +22,16 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     authorize @booking
+
     if params[:status] == 'active'
       @booking.active!
     elsif params[:status] == 'archived'
       @booking.archived!
     end
-    redirect_to dashboard_path
+    respond_to do |format|
+      format.html { redirect_to dashboard_path }
+      format.json
+    end
   end
 
   private
