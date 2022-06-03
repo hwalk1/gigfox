@@ -10,6 +10,12 @@
             <p class="card-price">$<%= venue.price_per_hour %></p>
 
             <%= link_to 'Edit', edit_venue_path(venue), class:"btn" %>
+
+            <%= link_to "Delete #{venue.name}",
+            venue_path(venue),
+            class:"btn",
+            method: :delete,
+	          data: { confirm: "Are you sure?" } %>
           </div>
         </div>
       <% end %>
