@@ -2,7 +2,12 @@
 
  <% @venues.each do |venue| %>
         <div class="card col-4 p-0 m-2">
-          <img class="card-img-top" src="<%= venue.picture_url %>" alt="Card image">
+           <% if defined? venue.photo.key%>
+            <%= cl_image_tag venue.photo.key, class: "card-img-top" %>
+          <%else%>
+            <img class="card-img-top" src="<%= venue.picture_url %>" alt="Card image">
+          <% end %>
+
           <div class="card-body">
             <h5 class="card-title"><%= venue.name %></h5>
             <p class="card-details"><%= venue.description %></p>
