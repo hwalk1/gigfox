@@ -21,4 +21,8 @@
   margin-top: 30px;
 }
 
-.sticky { position:fixed; top:120; }
+.scroll {
+  position: sticky;
+  top: 106px;
+  z-index: 1;
+}
