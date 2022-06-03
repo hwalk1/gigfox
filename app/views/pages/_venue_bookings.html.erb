@@ -8,21 +8,21 @@
     <% end %>
   </div>
 
-  <div class="col-4">
+  <div class="col-4" >
     <h3>Accepted</h3>
-    <% @venue_bookings.each do |booking| %>
-      <% if booking.status == 'active' %>
+    <div id="accepted">
+      <% @venue_bookings.where(status: "active").each do |booking| %>
         <%= render 'booking', booking: booking %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 
   <div class="col-4">
     <h3>Declined</h3>
-    <% @venue_bookings.each do |booking| %>
-      <% if booking.status == 'archived' %>
+    <div id="declined">
+      <% @venue_bookings.where(status: 'archived').each do |booking| %>
         <%= render 'booking', booking: booking %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
