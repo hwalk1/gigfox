@@ -73,7 +73,9 @@ class VenuesController < ApplicationController
   end
 
   def destroy
+    @venue = Venue.find(params[:id])
     authorize @venue
+    @venue.destroy
   end
 
 
