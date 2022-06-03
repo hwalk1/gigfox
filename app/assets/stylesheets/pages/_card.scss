@@ -35,6 +35,7 @@
   box-shadow: 1px 1px 5px rgb(140, 140, 140);
   background: transparentize($white, 0.8);
   backdrop-filter: blur(20px);
+  transition: 500ms;
 
 
   &:hover{
