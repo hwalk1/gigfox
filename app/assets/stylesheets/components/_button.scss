@@ -12,3 +12,19 @@
     transition: 500ms;
   }
 }
+
+.btn-index-map{
+  color: white;
+  border: 3px solid rgb(255,154,54);
+  border-radius: 60px;
+  transition: 500ms;
+  background-color: rgb(255,154,54);
+  &:hover {
+    background-color: white;
+    color: rgb(255,154,54);
+    border: 3px solid rgb(255,154,54);
+    // border: 3px solid #ffffff;
+    border-radius: 40px;
+    transition: 500ms;
+  }
+}
