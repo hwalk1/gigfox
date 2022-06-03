@@ -28,3 +28,17 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 10px 20px;
     transform: translate(650px, 300px) translate(-50%, -50%) rotateX(0deg) rotateZ(0deg) translate(0px, 0px);
 }
+
+#index-map-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.btn-index-map {
+  position: absolute;
+  bottom: 80px;
+  left: calc(50vw - 50px);
+}
