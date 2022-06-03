@@ -4,6 +4,21 @@
   border-radius: 40px;
 }
 
+input:focus {
+  outline: none !important;
+  // border: 3px solid #FFBA94;
+}
+
+.form-control-search {
+  border: 3px solid rgb(254,148,42);
+  border-radius: 40px;
+  height: 42px;
+  text-decoration: none;
+  &:hover {
+    box-shadow: 3px solid #FFBA94;
+  }
+}
+
 .dropdown-menu {
   border-radius: 10px;
 }
@@ -24,3 +39,7 @@
     transition-duration: 500ms;
   }
 }
+
+// .datepicker.search {
+//   height: 100%;
+// }

@@ -8,7 +8,7 @@
     <div class="card col-7 gx-0">
       <div class="row">
        <% if defined?@venue.photo.key%>
-          <%= cl_image_tag @venue.photo.key, class: "card-img-top" %>
+          <%= cl_image_tag @venue.photo.key, class: "card-img-top expanded" %>
           <%else%>
           <img class="card-img-top expanded" src="<%= @venue.picture_url %>" alt="Card image">
           <% end %>
@@ -51,7 +51,7 @@
           <div class="card p-3">
             <h1 class="text-center">Book Now</h1>
             <%= simple_form_for [ @venue, @booking ] do |f| %>
-              <%= f.input :start_time, as: :string, input_html: {class: "datepicker", data: { controller: 'flatpickr'}} %>
+              <%= f.input :start_time, as: :string, input_html: {class: "datepicker search", data: { controller: 'flatpickr'}} %>
               <%= f.input :duration, collection: 1..24, include_blank: false, input_html: { data: {action: "change->total-cost#showTotal"}} %>
               <p >Total: <span data-total-cost-target="price"></span></p>
               <%= f.input :song_url %>
