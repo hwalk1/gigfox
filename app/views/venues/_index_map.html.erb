@@ -1,0 +1,18 @@
+<div
+  class="map pe-none d-flex align-items-center"
+  id="index-map-container"
+  data-controller="toggle-visibility"
+>
+  <div class="container">
+      <div style="width: 100%; height: 600px;"
+        data-controller="mapbox"
+        class="opacity-0"
+        data-toggle-visibility-target="element"
+        data-mapbox-markers-value="<%= @markers.to_json %>"
+        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+  </div>
+
+  <button data-action="click->toggle-visibility#toggle" class="pe-auto btn btn-primary btn-index-map">Show Map</button>
+
+</div>
