@@ -1,5 +1,9 @@
 <div class="shadow rounded d-flex card-booking my-4" data-controller="accept-decline-booking" data-accept-decline-booking-target="card">
-  <img class="img-booking rounded-start" src="<%= booking.venue.picture_url%>" alt="venue image" height="150px" width="150px">
+  <% if defined? booking.venue.photo.key%>
+            <%= cl_image_tag booking.venue.photo.key, class: "img-booking rounded-start", height: "150px", width: "150px"  %>
+          <%else%>
+            <img class="img-booking rounded-start" src="<%= booking.venue.picture_url%>" alt="venue image" height="150px" width="150px">
+          <% end %>
   <div class="p-2 d-flex flex-column align-items-center justify-content-around">
     <h4><%= booking.venue.name %></h4>
     <p class="text-secondary"><%= booking.venue.location %></p>
