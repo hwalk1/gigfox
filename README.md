@@ -39,6 +39,6 @@ Setup should now be complete and can be hosted locally on localhost:3000 with th
 ```
 rails s
 ```
-Happy Travelling! ✈️
+Enjoy the Gig! 🎵
 ## Creators
 Made with ❤️ by [Lea](https://github.com/Lea-ah), [Michael](https://github.com/dcrv-exe), [Hayden](https://github.com/hwalk1) and [Aren](https://github.com/arenclissold)
